@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金龙纸业</title>
+    <script src="com.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        font-weight: 300;
+    } 
+    a{
+        color:#000;
+    }
+    .top{
+        height: 100px;
+        background: #fff;
+    }
+    .log{
+        width: 371px;
+        height: 100px;
+        background:url("photos/未标题-1.jpg") no-repeat;
+        float: left;
+        margin-left: 50px;
+        margin-right: 150px;
+    }
+    .top small{
+        position: absolute;
+        top:0;
+        right:25%;
+        color: gray;
+    }
+    .uu{
+        display: inline-block;
+        width: 960px;
+        height: 30px;
+        position: absolute;
+        margin:40px auto;
+        list-style: none;
+    }
+    .uu li{
+        display: inline-block;
+        height: 30px;
+
+    }
+    .uu li a{
+        color:#000;
+        font:18px/30px ;
+        display: inline-block;
+        margin-right: 30px; 
+    }
+    .uu li a:hover{
+        color:lightseagreen;
+    }
+    .uu li a:active{
+        color:lightseagreen;
+        text-decoration: lightseagreen;
+    }
+    .top-img{
+        height: 300px;
+        background: url("photos/fj1.jpg") bottom;
+
+    }
+    .sea{
+         margin-top: 10px;
+		height: 100px;
+		background: lightskyblue;
+        text-align: center;
+	}
+    .banner{
+        margin: 50px auto;
+        width: 1200px;
+        height: 1100px;
+        overflow: hidden;
+
+    }
+    .left{
+        width: 300px;
+        height: 900px;
+        float: left;
+        margin-right: 40px;
+        margin-left: 40px;
+
+    }
+    .left-t{
+        margin-bottom: 30px;
+    }
+    .left-b{
+        margin-top: 20px;
+        width:300px;
+        height:310px;
+        border:1px solid gray;
+        position: relative;
+        font-size:15px;
+        font-weight: 300;
+    }
+    .left-b h2{
+        margin:10px 0  0px 10px;
+
+    }
+    .left-b p{
+        margin:10px 0  10px 10px;
+    }
+    .left-b img{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+   .left-t-ul li{
+        border:1px solid gray;
+        text-align: center;
+        line-height: 40px;
+        display: block;
+    }
+    .left-t-ul li a{
+        display: block;
+    }
+    /* .left-t-ul li a:hover,.left-t-ul li a:active{
+        color:#fff;
+        background: rgb(12, 200, 224);
+    } */
+
+    .aaa{
+        color:#fff;
+        background: rgb(12, 200, 224);
+    }
+    .left-t-ul .li1{
+        line-height: 55px;
+        color:#fff;
+        background: rgb(12, 200, 224);
+    }
+    .right{
+        width: 800px;
+        height: 1100px;
+        float: left;
+        overflow: hidden;
+    }
+    .right span a:hover{
+        color:lightseagreen;
+    }
+    .right-t{
+        height: 25px;
+        border-bottom:1px solid gray;
+        margin-bottom: 80px;
+    }
+    .right-t h4{
+        float: left;
+    }
+    .right-t span{
+        margin-top: 0;
+        float:right;  
+    }
+
+    </style>
+</head>
+<body>
+    <div class="top" id="top">
+        <small>服务热线:(0577)86682618</small>
+            <div class="log"></div>
+            <ul class="uu" id="uu">
+                <li><a href="jinlong.html">首页</a></li>
+                <li><a href="jieshao.html">公司介绍</a></li>
+                <li><a href="chanpin.html">产品及应用</a></li>
+                <li><a href="jishu.html">技术能力</a></li>
+                <li><a href="pinzhi.html">品质管理系统</a></li>
+                <li><a href="xinwen.html">新闻中心</a></li>
+                <li><a href="lianxi.html">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="top-img"></div>
+    <div class="banner">
+        <div class="left">
+            <div class="left-t">
+                <ul class="left-t-ul" id="left-t-ul">
+                    <li class="li1"><h3>技术能力</h3></li>
+                    <li><a href="chejian.html">车间设备</a></li>
+                    <li><a href="celiang.html">测量仪器</a></li>
+                    <li><a href="gongcheng.html">工程能力</a></li>
+                </ul>
+            </div>
+            <script>
+            var list=dgebi("left-t-ul");
+            var as=list.getElementsByTagName("a");
+            for(var i=0;i<as.length;i++){
+                 as[i].onmouseover=function(){
+                this.className="aaa"
+            }
+            as[i].onmouseout=function(){
+                this.className=""
+            }
+            }
+        
+            </script>
+            <div class="left-m">
+                <img src="photos/adv_t.jpg" alt="" width="300" height="100">
+                <img src="photos/adv_r.jpg" alt="" width="300" height="100">
+            </div>
+            <div class="left-b">
+                <h2 >联系我们</h2>  
+                       <p> contact us</p>
+                        <p>电话：86-0750-3962003</p>
+                        <p>传真：86-0750-3962007 </p>
+                        <p>邮箱·：1084792113@qq.com</p>
+                        
+                       <p> 地 址：浙江省温州市森茂路78号</p>
+                <img src="photos/timg23.jpg" alt="" width="100" height="120">
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-t">
+            <h4>技术能力</h4>
+            <span><a href="jinlong.html">首页</a> »<a href="jishu.html".html">技术能力</a>»<a href="celiang.html">测量仪器</a> </span></div>  
+       
+        </div></div>
+        <div class="sea">
+            <p>fabricator:open sea</p>
+            <p>制作者：大海</p>
+        </div>
+</body>
+</html>
