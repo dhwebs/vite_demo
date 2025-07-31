@@ -8,6 +8,7 @@ const components = [Menu];
 // 全局注册方法
 const install = (app: App) => {
   components.forEach((component) => {
+    console.log(component);
     app.component(component.name!, component);
   });
 };
@@ -18,5 +19,5 @@ export { Menu };
 // 默认导出（全局注册）
 export default {
   install,
-  version: '1.0.0' // 可选：版本号
+  version: '1.0.0'
 };
