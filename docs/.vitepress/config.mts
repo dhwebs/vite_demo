@@ -19,16 +19,22 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: '开始',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-          { text: 'Menu 菜单栏组件', link: 'menu' }
+          { text: '快速开始', link: '/markdown-examples' },
+          { text: '更新日志', link: '/api-examples' }
+        ]
+      },
+      {
+        text: '组件',
+        items: [
+          { text: 'Menu 菜单栏组件', link: '/menu' },
+          { text: 'Dialog 对话框组件', link: '/dialog' }
         ]
       }
     ],
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/dhwebs/vite_demo' }]
   },
   markdown: {
     config(md) {

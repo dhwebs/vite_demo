@@ -1,9 +1,10 @@
 // src/index.ts
 import type { App } from 'vue';
 import Menu from './components/Menu';
+import Dialog from './components/Dialog';
 // 导入其他组件...
 
-const components = [Menu];
+const components = [Menu, Dialog];
 
 // 全局注册方法
 const install = (app: App) => {
@@ -14,7 +15,7 @@ const install = (app: App) => {
 };
 
 // 支持按需导入
-export { Menu };
+export { Menu, Dialog };
 
 // 默认导出（全局注册）
 export default {

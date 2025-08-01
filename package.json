@@ -11,11 +11,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitepress-demo-preview/component": "^2.5.1",
-    "@vitepress-demo-preview/plugin": "^1.4.0",
     "vue": "^3.5.17"
   },
   "devDependencies": {
+    "@vitepress-demo-preview/component": "^2.5.1",
+    "@vitepress-demo-preview/plugin": "^1.4.0",
+    "less": "^4.4.0",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
     "@vitejs/plugin-vue": "^6.0.0",
