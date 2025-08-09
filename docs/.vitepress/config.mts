@@ -29,6 +29,8 @@ export default defineConfig({
         text: '组件',
         items: [
           { text: 'Menu 菜单栏组件', link: '/menu' },
+          { text: 'Content 容器组件', link: '/content' },
+          { text: 'Layout 布局组件', link: '/layout' },
           { text: 'Dialog 对话框组件', link: '/dialog' }
         ]
       }

@@ -1,10 +1,12 @@
 // src/index.ts
 import type { App } from 'vue';
-import Menu from './components/Menu';
-import Dialog from './components/Dialog';
+import Menu from './components/menu';
+import Dialog from './components/dialog';
+import Content from './components/content';
+import Layout from './components/layout';
 // 导入其他组件...
 
-const components = [Menu, Dialog];
+const components = [Menu, Dialog, Content, Layout];
 
 // 全局注册方法
 const install = (app: App) => {

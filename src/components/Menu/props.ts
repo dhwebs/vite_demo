@@ -12,5 +12,9 @@ export default {
   theme: {
     type: String as PropType<'light' | 'dark'>,
     default: 'light'
+  },
+  menuPosition: {
+    type: String as PropType<'aside' | 'header'>,
+    default: 'aside'
   }
 };

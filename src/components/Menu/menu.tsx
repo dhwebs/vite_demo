@@ -1,5 +1,6 @@
 import { defineComponent, ref, watch } from 'vue';
 import {
+  HeadMenu as THeadMenu,
   Menu as TMenu,
   MenuGroup as TMenuGroup,
   Submenu as TSubmenu,
@@ -64,26 +65,38 @@ export default defineComponent({
       });
     };
 
-    return () => (
-      <TMenu
-        theme={props.theme}
-        collapsed={localCollapsed.value}
-        v-slots={{
-          logo: slots.logo ? () => slots.logo?.() : undefined,
-          operations: () => (
-            <TButton
-              variant="text"
-              shape="square"
-              ghost={props.theme === 'dark'}
-              class="t-demo-collapse-btn"
-              onClick={changeCollapsed}
-              v-slots={{ icon: () => <TIcon name="view-list" /> }}
-            />
-          )
-        }}
-      >
-        {renderMenu(props.menuData)}
-      </TMenu>
-    );
+    const commonSlots = {
+      logo: slots.logo ? () => slots.logo?.() : undefined,
+      operations:
+        props.menuPosition === 'header'
+          ? undefined
+          : () => (
+              <TButton
+                variant="text"
+                shape="square"
+                ghost={props.theme === 'dark'}
+                class="t-demo-collapse-btn"
+                onClick={changeCollapsed}
+                v-slots={{ icon: () => <TIcon name="view-list" /> }}
+              />
+            )
+    };
+
+    function renderMenuComponent() {
+      if (props.menuPosition === 'header') {
+        return (
+          <THeadMenu theme={props.theme} v-slots={commonSlots}>
+            {renderMenu(props.menuData)}
+          </THeadMenu>
+        );
+      }
+      return (
+        <TMenu theme={props.theme} collapsed={localCollapsed.value} v-slots={commonSlots}>
+          {renderMenu(props.menuData)}
+        </TMenu>
+      );
+    }
+
+    return () => renderMenuComponent();
   }
 });

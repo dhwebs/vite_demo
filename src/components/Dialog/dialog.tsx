@@ -1,8 +1,7 @@
 // FullscreenDialog.tsx
 import { defineComponent, ref, watch, computed } from 'vue';
-import { Dialog as TDialog } from 'tdesign-vue-next';
+import { Dialog as TDialog, Icon as TIcon } from 'tdesign-vue-next';
 // import type { DialogProps } from 'tdesign-vue-next';
-import { FullscreenExit1Icon, Fullscreen2Icon } from 'tdesign-icons-vue-next';
 import _props from './props';
 
 export default defineComponent({
@@ -29,6 +28,19 @@ export default defineComponent({
       <div class="fullscreen-dialog-header">
         <div class="fullscreen-dialog-title">{slots.header?.() || props.header}</div>
         <div class="fullscreen-dialog-actions">
+          {slots['header-actions']?.()}
+          <t-button
+            theme="default"
+            variant="text"
+            shape="square"
+            size="small"
+            class="fullscreen-toggle"
+            onClick={closeDialog}
+          >
+            {{
+              icon: () => <TIcon name="close" size="16" />
+            }}
+          </t-button>
           <t-button
             theme="default"
             variant="text"
@@ -37,13 +49,22 @@ export default defineComponent({
             class="fullscreen-toggle"
             onClick={toggleFullscreen}
           >
-            {dialogModel.value === 'full-screen' ? <FullscreenExit1Icon /> : <Fullscreen2Icon />}
+            {{
+              icon: () => (
+                <TIcon
+                  name={dialogModel.value === 'full-screen' ? 'fullscreen-exit-1' : 'fullscreen-1'}
+                  size="16"
+                />
+              )
+            }}
           </t-button>
-          {slots['header-actions']?.()}
         </div>
       </div>
     ));
-
+    // 关闭对话框
+    const closeDialog = () => {
+      emit('update:visible', false);
+    };
     const updateVisible = (val: boolean) => {
       props.onBeforeClose?.();
       emit('update:visible', val);
@@ -63,6 +84,7 @@ export default defineComponent({
       <TDialog
         mode={dialogModel.value}
         v-model:visible={visible.value}
+        closeBtn={false}
         onBeforeClose={() => updateVisible(false)}
         v-slots={{
           default: slots.default,
