@@ -25,22 +25,10 @@ export default defineComponent({
     };
     // 动态对话框属性
     const dialogHeader = computed(() => (
-      <div class="fullscreen-dialog-header">
-        <div class="fullscreen-dialog-title">{slots.header?.() || props.header}</div>
-        <div class="fullscreen-dialog-actions">
+      <div class="h-design-fullscreen-dialog-header">
+        <div class="h-design-fullscreen-dialog-title">{slots.header?.() || props.header}</div>
+        <div class="h-design-fullscreen-dialog-actions">
           {slots['header-actions']?.()}
-          <t-button
-            theme="default"
-            variant="text"
-            shape="square"
-            size="small"
-            class="fullscreen-toggle"
-            onClick={closeDialog}
-          >
-            {{
-              icon: () => <TIcon name="close" size="16" />
-            }}
-          </t-button>
           <t-button
             theme="default"
             variant="text"
@@ -56,6 +44,17 @@ export default defineComponent({
                   size="16"
                 />
               )
+            }}
+          </t-button>
+          <t-button
+            theme="default"
+            variant="text"
+            shape="square"
+            size="small"
+            onClick={closeDialog}
+          >
+            {{
+              icon: () => <TIcon name="close" size="16" />
             }}
           </t-button>
         </div>
@@ -92,6 +91,7 @@ export default defineComponent({
           footer: slots.footer,
           header: dialogHeader.value
         }}
+        {...attrs}
       />
     );
   }

@@ -42,7 +42,6 @@ const tabData = ref([
     style="height: 500px"
   >
     <template #logo> HDesign </template>
-    <template #footer> footer </template>
   </HLayout>
 </template>
 

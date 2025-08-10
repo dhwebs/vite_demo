@@ -47,8 +47,8 @@ export default defineComponent({
       console.log(value);
     };
     return () => (
-      <div class={'h-demo-content'}>
-        <div class={'h-demo-content-tabs'}>
+      <div class={'h-design-content'}>
+        <div class={'h-design-content-tabs'}>
           <TTabs
             v-model={tabValue.value}
             theme="card"
@@ -64,7 +64,7 @@ export default defineComponent({
               ></TTabPanel>
             ))}
           </TTabs>
-          <div class={'h-demo-content-tabs-actions'}>
+          <div class={'h-design-content-tabs-actions'}>
             <TDropdown options={options} trigger="click" onClick={dropdownChange}>
               <TButton variant="text">
                 <TIcon name="chevron-down" size="16" />

@@ -33,7 +33,7 @@ export default defineComponent({
     }
     function renderContent() {
       return (
-        <main class={'h-demo-layout-content' + (contentFullscreen.value ? ' fullscreen' : '')}>
+        <main class={'h-design-layout-content' + (contentFullscreen.value ? ' fullscreen' : '')}>
           <Content {...props.contentProps} onUpdate:fullscreen={fullscreenChange}></Content>
           {renderFooter('content-end')}
         </main>
@@ -45,13 +45,13 @@ export default defineComponent({
     function renderHeader() {
       return (
         !contentFullscreen.value && (
-          <header class="h-demo-layout-header">
+          <header class="h-design-layout-header">
             {slots.logo ? slots.logo() : 'HDesign-vue-next Demo'}
             {props.theme === 'header-menu' && (
               <Menu {...props.menuProps} menuPosition="header"></Menu>
             )}
             {slots.headerMenu && slots.headerMenu()}
-            <div class={'h-demo-layout-header-actions'}>
+            <div class={'h-design-layout-header-actions'}>
               {slots.actions && slots.actions()}
               <TDropdown options={props.userOptions} onClick={dropdownChange}>
                 <TButton variant="text">
@@ -72,7 +72,7 @@ export default defineComponent({
     function renderAside() {
       return (
         !contentFullscreen.value && (
-          <aside class="h-demo-layout-asider">
+          <aside class="h-design-layout-asider">
             <Menu {...props.menuProps}></Menu>
           </aside>
         )
@@ -81,9 +81,9 @@ export default defineComponent({
     return () => {
       if (props.theme === 'aside-menu') {
         return (
-          <section class="h-demo-layout">
+          <section class="h-design-layout">
             {renderHeader()}
-            <section class="h-demo-layout h-demo-layout--with-sider">
+            <section class="h-design-layout h-design-layout--with-sider">
               {renderAside()}
               {renderContent()}
             </section>
@@ -93,7 +93,7 @@ export default defineComponent({
       }
       if (props.theme === 'header-menu') {
         return (
-          <section class="h-demo-layout">
+          <section class="h-design-layout">
             {renderHeader()}
             {renderContent()}
             {renderFooter('layout-end')}
@@ -102,8 +102,8 @@ export default defineComponent({
       }
       // no-header
       return (
-        <section class="h-demo-layout">
-          <section class="h-demo-layout h-demo-layout--with-sider">
+        <section class="h-design-layout">
+          <section class="h-design-layout h-design-layout--with-sider">
             {renderAside()}
             {renderContent()}
           </section>

@@ -1,0 +1,72 @@
+@import '../base.css'; 
+
+.h-design-icon-list{
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  .h-design-icon-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    width: 80px;
+    cursor: pointer;
+    text-align: center;
+    &:hover, &.checked{
+      color: var(--td-brand-color-hover);
+    }
+    span{
+      font-size: 12px;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+.h-design-icon-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .t-select-input {
+    .t-input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .value-display{
+      display: flex;
+      align-items: center;
+      .t-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+  .t-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0px;
+    width: 40px;
+    .t-icon{
+      font-size: 16px;
+      color: var(--td-text-color-secondary);
+    }
+    &:hover .t-icon{
+      color: var(--td-text-color-secondary);
+    }
+  }
+  &:hover .t-select-input .t-input{
+    border-right-color: var(--td-brand-color-hover);
+  }
+}
+.h-design-icon-select-dialog{
+  .t-dialog__position_fullscreen{
+    height: 100vh;
+  }
+  .t-dialog__body:not(.t-dialog__body--fullscreen){
+    height: 50vh;
+  }
+}
+.icon-panel{
+  height: 300px;
+}

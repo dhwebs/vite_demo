@@ -19,7 +19,7 @@ const tabData = ref([
 </script>
 
 <template>
-  <HContent theme="light" v-model:tabData="tabData"> </HContent>
+  <HContent theme="light" v-model:tabData="tabData" style="height: 500px"> </HContent>
 </template>
 
 <style scoped>

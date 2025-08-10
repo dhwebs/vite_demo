@@ -4,9 +4,11 @@ import Menu from './components/menu';
 import Dialog from './components/dialog';
 import Content from './components/content';
 import Layout from './components/layout';
+import IconSelect from './components/icon-select';
+import PermissionTable from './components/permission-table';
 // 导入其他组件...
 
-const components = [Menu, Dialog, Content, Layout];
+const components = [Menu, Dialog, Content, Layout, IconSelect, PermissionTable];
 
 // 全局注册方法
 const install = (app: App) => {
