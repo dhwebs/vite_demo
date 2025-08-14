@@ -73,7 +73,7 @@ const handleMenuChange = (value: string) => {
   <HMenu
     theme="light"
     :collapsed="isCollapsed"
-    :menu-data="groupedMenuData"
+    :data="groupedMenuData"
     @update:collapsed="handleCollapseToggle"
     @change="handleMenuChange"
     v-slot:logo

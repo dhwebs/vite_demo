@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { routeTab } from '../types';
+import type { ContentRouteTab } from '../types';
 
 // 分组菜单示例
-const tabData = ref([
+const data = ref([
   {
     value: '/base',
     label: '基础功能',
@@ -19,7 +19,7 @@ const tabData = ref([
 </script>
 
 <template>
-  <HContent theme="light" v-model:tabData="tabData" style="height: 500px"> </HContent>
+  <HContent theme="light" v-model:data="data" style="height: 500px"> </HContent>
 </template>
 
 <style scoped>

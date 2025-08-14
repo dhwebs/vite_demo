@@ -34,7 +34,7 @@ export default defineComponent({
       emit('update:collapsed', localCollapsed.value);
     }
 
-    const renderMenu = (items: MenuItem[]) => {
+    function renderMenu(items: MenuItem[]) {
       return items.map((item) => {
         const { children, icon, type, ...restItem } = item;
         if (type === 'group') {
@@ -63,7 +63,7 @@ export default defineComponent({
           ></TMenuItem>
         );
       });
-    };
+    }
 
     const commonSlots = {
       logo: slots.logo ? () => slots.logo?.() : undefined,
@@ -86,17 +86,17 @@ export default defineComponent({
       if (props.menuPosition === 'header') {
         return (
           <THeadMenu theme={props.theme} v-slots={commonSlots}>
-            {renderMenu(props.menuData)}
+            {renderMenu(props.data)}
           </THeadMenu>
         );
       }
       return (
         <TMenu theme={props.theme} collapsed={localCollapsed.value} v-slots={commonSlots}>
-          {renderMenu(props.menuData)}
+          {renderMenu(props.data)}
         </TMenu>
       );
     }
 
-    return () => renderMenuComponent();
+    return renderMenuComponent;
   }
 });

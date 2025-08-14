@@ -91,22 +91,10 @@ const handleMenuChange = (value: string) => {
     <!-- 简单菜单 - 对应图片左侧 -->
     <HMenu
       :collapsed="isCollapsed"
-      :menu-data="nestedMenuData"
+      :data="nestedMenuData"
       @update:collapsed="handleCollapseToggle"
       @change="handleMenuChange"
-      v-slot:logo
     >
-      <div class="logo">
-        <img
-          height="28"
-          :src="
-            isCollapsed
-              ? 'https://tdesign.gtimg.com/site/logo-only.png'
-              : 'https://tdesign.gtimg.com/site/baseLogo-light.png'
-          "
-          alt="TDesign"
-        />
-      </div>
     </HMenu>
   </div>
 </template>

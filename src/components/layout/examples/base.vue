@@ -67,8 +67,8 @@ const tabData = ref([
 <template>
   <HLayout
     theme="aside-menu"
-    :menuProps="{ menuData }"
-    :contentProps="{ tabData }"
+    :menuProps="{ data: menuData }"
+    :contentProps="{ data: tabData }"
     style="height: 500px"
   >
   </HLayout>

@@ -1,10 +1,9 @@
 <template>
-  <HPermissionTable :data="data" checkable> </HPermissionTable>
+  <HPermissionTable :data="data"> </HPermissionTable>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-
 const data = [
   {
     name: '页面管理',

@@ -1,4 +1,5 @@
-import { defineComponent, ref, watch } from 'vue';
+import { defineComponent, ref, watch, watchEffect } from 'vue';
+// import { RouterView, useRoute } from 'vue-router';
 import {
   Tabs as TTabs,
   TabPanel as TTabPanel,
@@ -6,7 +7,7 @@ import {
   Button as TButton,
   Dropdown as TDropdown
 } from 'tdesign-vue-next';
-import type { routeTab } from './types';
+import type { ContentRouteTab } from './types';
 import type { TdTabsProps, DropdownOption } from 'tdesign-vue-next';
 import _props from './props';
 
@@ -15,9 +16,18 @@ export default defineComponent({
 
   props: _props,
 
-  emits: ['update:tabData', 'update:fullscreen'],
+  emits: ['update:data', 'update:fullscreen'],
 
   setup(props, { slots, emit }) {
+    // const route = useRoute();
+    // const cachedRoutes = ref(new Set());
+
+    // 动态管理缓存路由
+    // watchEffect(() => {
+    //   if (route?.meta?.keepAlive) {
+    //     cachedRoutes.value.add(route.name);
+    //   }
+    // });
     const tabValue = ref('');
     const contentFullscreen = ref(props.fullscreen);
     watch(
@@ -30,22 +40,22 @@ export default defineComponent({
       { value: 'closeOther', content: '关闭其他', prefixIcon: () => <TIcon name="close" /> },
       { value: 'closeAll', content: '关闭全部', prefixIcon: () => <TIcon name="close" /> }
     ];
-    const onTabRemove = ({ value, index }: { value: TdTabsProps['value']; index: number }) => {
+    function onTabRemove({ value, index }: { value: TdTabsProps['value']; index: number }) {
       if (index < 0) return false;
-      const newTabData = props.tabData.filter((item) => item.value !== value);
-      emit('update:tabData', newTabData);
+      const newTabData = props.data.filter((item) => item.value !== value);
+      emit('update:data', newTabData);
       if (newTabData.length === 0) return;
       if (tabValue.value === value) {
         tabValue.value = newTabData[Math.max(index - 1, 0)].value;
       }
-    };
-    const onTabChange = (value: TdTabsProps['value']) => {
+    }
+    function onTabChange(value: TdTabsProps['value']) {
       console.log('onTabChange', value);
       tabValue.value = value as string;
-    };
-    const dropdownChange = (value: DropdownOption) => {
+    }
+    function dropdownChange(value: DropdownOption) {
       console.log(value);
-    };
+    }
     return () => (
       <div class={'h-design-content'}>
         <div class={'h-design-content-tabs'}>
@@ -55,13 +65,16 @@ export default defineComponent({
             onChange={onTabChange}
             onRemove={onTabRemove}
           >
-            {props.tabData.map((data) => (
-              <TTabPanel
-                key={data.value}
-                value={data.value}
-                label={data.label}
-                removable={!data.fixed}
-              ></TTabPanel>
+            {props.data.map((data) => (
+              <TTabPanel key={data.value} value={data.value} removable={!data.fixed}>
+                {{
+                  label: () => (
+                    <TDropdown options={options} trigger="context-menu" onClick={dropdownChange}>
+                      <div class={'h-design-content-tab-label'}>{data.label}</div>
+                    </TDropdown>
+                  )
+                }}
+              </TTabPanel>
             ))}
           </TTabs>
           <div class={'h-design-content-tabs-actions'}>
@@ -84,9 +97,8 @@ export default defineComponent({
             </TButton>
           </div>
         </div>
-        <keep-alive exclude={props.exclude}>
-          <router-view />
-        </keep-alive>
+
+        <RouterView />
       </div>
     );
   }

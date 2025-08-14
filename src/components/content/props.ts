@@ -1,8 +1,8 @@
-import type { routeTab } from './types';
+import type { ContentRouteTab } from './types';
 import type { PropType } from 'vue';
 export default {
-  tabData: {
-    type: Array as PropType<routeTab[]>,
+  data: {
+    type: Array as PropType<ContentRouteTab[]>,
     default: () => []
   },
   theme: {

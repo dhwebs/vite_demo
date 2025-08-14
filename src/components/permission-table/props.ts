@@ -1,18 +1,12 @@
+import type { PermissionTableProps } from './types';
 import type { PropType } from 'vue';
 export default {
-  header: {
-    type: String,
-    default: ''
+  data: {
+    type: Array as PropType<PermissionTableProps['data']>,
+    default: () => []
   },
-  mode: {
-    type: String as PropType<'modal' | 'modeless' | 'normal' | 'full-screen'>,
-    default: 'modal'
-  },
-  visible: {
-    type: Boolean,
+  checkable: {
+    type: Boolean as PropType<PermissionTableProps['checkable']>,
     default: false
-  },
-  onBeforeClose: {
-    type: Function as PropType<() => void>
   }
 };

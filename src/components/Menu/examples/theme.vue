@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import type { MenuItem } from '../types';
 
-const menuData: MenuItem[] = [
+const data: MenuItem[] = [
   {
     value: 'dashboard',
     content: '仪表盘',
@@ -70,44 +70,28 @@ const handleMenuChange = (value: string) => {
     <HMenu
       theme="light"
       :collapsed="isCollapsed"
-      :menu-data="menuData"
+      :data="data"
       @update:collapsed="handleCollapseToggle"
       @change="handleMenuChange"
       v-slot:logo
     >
-      <div class="logo">
-        <img
-          height="28"
-          :src="
-            isCollapsed
-              ? 'https://tdesign.gtimg.com/site/logo-only.png'
-              : 'https://tdesign.gtimg.com/site/baseLogo-light.png'
-          "
-          alt="TDesign"
-        />
-      </div>
     </HMenu>
 
     <!-- 深色主题菜单 - 对应图片右侧 -->
     <HMenu
       theme="dark"
       :collapsed="isCollapsed"
-      :menu-data="menuData"
+      :data="data"
       @update:collapsed="handleCollapseToggle"
       @change="handleMenuChange"
-      v-slot:logo
     >
-      <div class="logo">
-        <img
-          height="28"
-          :src="
-            isCollapsed
-              ? 'https://tdesign.gtimg.com/site/logo-only.png'
-              : 'https://tdesign.gtimg.com/site/baseLogo-dark.png'
-          "
-          alt="TDesign"
-        />
-      </div>
+    </HMenu>
+    <HMenu
+      :collapsed="true"
+      :data="data"
+      @update:collapsed="handleCollapseToggle"
+      @change="handleMenuChange"
+    >
     </HMenu>
   </div>
 </template>

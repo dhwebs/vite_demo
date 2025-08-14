@@ -1,4 +1,4 @@
-export interface routeTab {
+export interface ContentRouteTab {
   value: string;
   icon?: string;
   label?: string;

@@ -1,7 +1,7 @@
 import type { MenuItem } from './types';
 import type { PropType } from 'vue';
 export default {
-  menuData: {
+  data: {
     type: Array as PropType<MenuItem[]>,
     default: () => []
   },

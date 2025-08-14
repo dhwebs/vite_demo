@@ -37,8 +37,8 @@ const tabData = ref([
 <template>
   <HLayout
     theme="header-menu"
-    :menuProps="{ menuData }"
-    :contentProps="{ tabData }"
+    :menuProps="{ data: menuData }"
+    :contentProps="{ data: tabData }"
     style="height: 500px"
   >
     <template #logo> HDesign </template>
