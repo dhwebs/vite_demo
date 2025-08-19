@@ -1,4 +1,4 @@
-# IconSelect 图标选择器组件
+# PermissionTable 权限表格组件
 
 ## 编辑权限
 

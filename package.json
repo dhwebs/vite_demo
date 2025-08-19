@@ -8,9 +8,11 @@
     "docs:preview": "vitepress preview docs",
     "dev": "vitepress dev docs",
     "build": "vue-tsc -b && vite build",
+    "test": "npx vitest",
     "preview": "vite preview"
   },
   "dependencies": {
+    "codemirror-editor-vue3": "^2.8.0",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
   },
@@ -21,6 +23,8 @@
     "@vitejs/plugin-vue-jsx": "^5.0.1",
     "@vitepress-demo-preview/component": "^2.5.1",
     "@vitepress-demo-preview/plugin": "^1.4.0",
+    "@vitest/ui": "^3.2.4",
+    "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
@@ -33,6 +37,7 @@
     "vite": "^7.0.4",
     "vitepress": "^1.6.3",
     "vitepress-plugin-demo": "^0.8.1",
+    "vitest": "^3.2.4",
     "vue-tsc": "^2.2.12"
   }
 }

@@ -6,9 +6,22 @@ import Content from './components/content';
 import Layout from './components/layout';
 import IconSelect from './components/icon-select';
 import PermissionTable from './components/permission-table';
+import RenderForm from './components/render-form';
+import SearchForm from './components/search-form';
+import JsonInput from './components/json-input';
 // 导入其他组件...
 
-const components = [Menu, Dialog, Content, Layout, IconSelect, PermissionTable];
+const components = [
+  Menu,
+  Dialog,
+  Content,
+  Layout,
+  IconSelect,
+  PermissionTable,
+  RenderForm,
+  JsonInput,
+  SearchForm
+];
 
 // 全局注册方法
 const install = (app: App) => {

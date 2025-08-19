@@ -33,7 +33,10 @@ export default defineConfig({
           { text: 'Layout 布局组件', link: '/layout' },
           { text: 'Dialog 对话框组件', link: '/dialog' },
           { text: 'IconSelect 图标选择器组件', link: '/icon-select' },
-          { text: 'PermissionTable 权限表格组件', link: '/permission-table' }
+          { text: 'PermissionTable 权限表格组件', link: '/permission-table' },
+          { text: 'RenderForm 动态表单组件', link: '/render-form' },
+          { text: 'JsonInput JSON输入框组件', link: '/json-input' },
+          { text: 'SearchForm 搜索表单组件', link: '/search-form' }
         ]
       }
     ],
